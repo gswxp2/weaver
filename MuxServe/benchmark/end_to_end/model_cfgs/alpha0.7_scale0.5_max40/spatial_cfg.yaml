@@ -1,0 +1,30 @@
+# 1_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1_4_4_8
+gpu_memory_utilization: 0.5
+max_num_seqs: 256
+models:
+- max_num_seqs: 256
+  model: meta-llama/Meta-Llama-3-8B
+  model_dtype: bfloat16
+  mps_percentage:
+  - 100
+  - 90
+  name: llm-1
+  pipeline_parallel_size: 1
+  placement:
+  - - 0
+  tensor_parallel_size: 1
+- max_num_seqs: 256
+  model: meta-llama/Meta-Llama-3-8B
+  model_dtype: bfloat16
+  mps_percentage:
+  - 100
+  - 90
+  name: llm-0
+  pipeline_parallel_size: 1
+  placement:
+  - - 0
+  tensor_parallel_size: 1
+num_gpus: 8
+overload_threshold: 2
+workloads:
+  workload_file:

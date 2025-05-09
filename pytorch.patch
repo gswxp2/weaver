@@ -1,0 +1,19 @@
+diff --git a/aten/src/ATen/cuda/CUDAGraph.cpp b/aten/src/ATen/cuda/CUDAGraph.cpp
+index 4a8e425480c..f9cbe021692 100644
+--- a/aten/src/ATen/cuda/CUDAGraph.cpp
++++ b/aten/src/ATen/cuda/CUDAGraph.cpp
+@@ -226,10 +226,10 @@ void CUDAGraph::replay() {
+ 
+   c10::OptionalDeviceGuard device_guard{capture_stream_.device()};
+ 
+-  for (auto& [generator_state, wholegraph_increments] :
+-       captured_generator_states_) {
+-    generator_state->replay_prologue(wholegraph_increments);
+-  }
++  // for (auto& [generator_state, wholegraph_increments] :
++  //      captured_generator_states_) {
++  //   generator_state->replay_prologue(wholegraph_increments);
++  // }
+   // graph_exec_ may be replayed in any stream.
+   AT_CUDA_CHECK(cudaGraphLaunch(graph_exec_, at::cuda::getCurrentCUDAStream()));
+ 

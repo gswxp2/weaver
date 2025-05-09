@@ -1,0 +1,10 @@
+cluster:
+  ngpus_per_node: 2
+  nnodes: 1
+models:
+- model: meta-llama/Meta-Llama-3-8B
+  name: llm-0
+  rate: 10
+- model: meta-llama/Meta-Llama-3-8B
+  name: llm-1
+  rate: 5
