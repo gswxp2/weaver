@@ -4,6 +4,6 @@
 MuxServe/examples/basic/mps/
 *.log
 *.png
-*.txt
+ae_exps/*/*.txt
 pytorch
 paper

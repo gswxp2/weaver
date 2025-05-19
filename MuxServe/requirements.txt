@@ -1,0 +1,8 @@
+aiohttp
+zmq
+packaging
+torch==2.1.0+cu121
+cmake
+numpy<2.0
+setuptools_scm
+psutil<7.0.0
